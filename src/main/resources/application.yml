@@ -1,0 +1,89 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://daynoteblog-db.cnodvtkrz1fq.ap-northeast-2.rds.amazonaws.com:3306/daynoteblog?serverTimezone=Asia/Seoul
+    username: admin
+    password: note1234!
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: daynoteblog@gmail.com
+    password: bcyfsampnnsbolhk
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+secrect:
+  key: eornjs1449.
+
+file:
+  path: D:/workspace/springboot/upload/
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 796180152905-h4oikeegcrpsbi0it9svduifmbvq2315.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
+
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+#    username: cos
+#    password: cos1234
+#
+#  jpa:
+#    open-in-view: true
+#    hibernate:
+#      ddl-auto: update
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#      use-new-id-generator-mappings: false
+#    show-sql: true
+#    properties:
+#      hibernate.format_sql: true
