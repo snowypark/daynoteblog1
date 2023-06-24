@@ -15,7 +15,7 @@
 	<name>blog</name>
 	<description>Blog Project</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -133,6 +133,8 @@
 	<build>
 		<plugins>
 			<plugin>
+
+
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
